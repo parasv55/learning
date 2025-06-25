@@ -5,8 +5,8 @@ const jsonData = fs.readFileSync('sales_data.json', 'utf8');
 const salesData = JSON.parse(jsonData);
 console.log('salesData',salesData);
 
-salesData.forEach(item => {
-  item[totalSaleForProduct] = item.unitsSold * item.unitPrice;
+salesData.map(item => {
+  item.totalSaleForProduct = item.unitsSold * item.unitPrice;
 });
 console.log('salesData with totalSales', salesData);
 
